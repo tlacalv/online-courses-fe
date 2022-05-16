@@ -1,0 +1,80 @@
+.menu {
+  background-color: #363a45;
+  width: 15rem;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: -15rem;
+  transition: left .3s ease-out;
+  z-index: 3;
+}
+
+.menu ul {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 0;
+}
+
+.menu li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.menu li a {
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.nav-active {
+  color: grey !important;
+  transition: all .3s ease-out;
+}
+.open {
+  left: 0;
+}
+.backdrop {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0);
+  transition: all .3s ease-out;
+  /* display: none; */
+}
+.backdrop-active {
+  /* display: block; */
+  z-index: 2;
+  background-color: rgba(0, 0, 0, .4);
+
+}
+.header {
+  background-color: #1b1e24;
+  display: flex;
+  align-items: center;
+  gap:1rem;
+  padding: .8rem;
+  border-bottom: 1px solid #363a45 ;
+  margin-bottom: .5rem;
+}
+.header button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  color:white;
+  border-radius: 4px;
+  padding: .4rem .6rem;
+  border: 1px solid rgb(126, 124, 131);
+  transition: all .3s ease-out;
+}
+.header button:hover {
+  background-color: #4f5564;
+} 
+.header h2 {
+  margin: 0;
+  font-weight: 400;
+}
