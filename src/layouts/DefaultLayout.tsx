@@ -4,7 +4,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import styles from "../styles/menu.module.css";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faBook, faGlasses, faUserGraduate } from '@fortawesome/free-solid-svg-icons';
 
 
 interface Props {
@@ -31,7 +31,7 @@ export const DefaultLayout = ({ children }: Props) => {
                 isActive ? `${styles["nav-active"]}` : ""
               }
             >
-              Courses
+              <FontAwesomeIcon icon={faBook} /> Courses
             </NavLink>
           </li>
           <li>
@@ -41,7 +41,7 @@ export const DefaultLayout = ({ children }: Props) => {
                 isActive ? styles["nav-active"] : ""
               }
             >
-              Instructors
+              <FontAwesomeIcon icon={faGlasses} /> Instructors
             </NavLink>
           </li>
           <li>
@@ -51,7 +51,7 @@ export const DefaultLayout = ({ children }: Props) => {
                 isActive ? styles["nav-active"] : ""
               }
             >
-              Students
+              <FontAwesomeIcon icon={faUserGraduate} /> Students
             </NavLink>
           </li>
         </ul>
@@ -69,7 +69,9 @@ export const DefaultLayout = ({ children }: Props) => {
         </button>
         <h2>Online courses</h2>
       </header>
-      {children}
+      <div className="content">
+        {children}
+      </div>
     </>
   );
 };

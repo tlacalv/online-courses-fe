@@ -1,5 +1,5 @@
 .menu {
-  background-color: #363a45;
+  background-color: #1b1e24;
   width: 15rem;
   position: fixed;
   top: 0;
@@ -7,30 +7,40 @@
   left: -15rem;
   transition: left .3s ease-out;
   z-index: 3;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
 }
 
 .menu ul {
   align-items: center;
+  width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
   padding-left: 0;
 }
 
 .menu li {
   list-style: none;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  width: 100%;
 }
 
 .menu li a {
   color: white;
   font-size: 1.2rem;
   text-decoration: none;
+  display: inline-block;
+  padding: .5rem;
+  border-radius: 4px;
+  width: 100%;
 }
 
 .nav-active {
-  color: grey !important;
   transition: all .3s ease-out;
+  background-color: #363a45;
 }
 .open {
   left: 0;
