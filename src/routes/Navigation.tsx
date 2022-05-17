@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { BrowserRouter, Navigate, Route, Routes, NavLink, useLocation} from 'react-router-dom';
 import { DefaultLayout } from '../layouts/DefaultLayout';
 import { CourseList, Home, Instructor, InstructorList, NewInstructor, NewStudent, Student, StudentList } from '../pages';
+import { StudentCourses } from '../pages/students/StudentCourses';
 
 export const Navigation = () => {
   
@@ -20,6 +21,7 @@ export const Navigation = () => {
           <Route path='/students' element={<DefaultLayout><StudentList /></DefaultLayout>}  />
           <Route path='/students/new' element={<DefaultLayout><NewStudent /></DefaultLayout>}  />
           <Route path='/students/:id' element={<DefaultLayout><Student /></DefaultLayout>}  />
+          <Route path='/students/courses/:id' element={<DefaultLayout><StudentCourses /></DefaultLayout>}  />
 
           <Route path='/courses' element={<DefaultLayout><CourseList /></DefaultLayout>}  />
 

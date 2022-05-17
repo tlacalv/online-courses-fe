@@ -49,6 +49,21 @@ class CoursesAPI {
   async deleteStudent(id: number) {
     return await this.client.delete(`/students/${id}`);      
   }
+  async selectStudentCourse(user_id: number, course_id: number) {
+    return await this.client.post(`/students/enlist/${user_id}`,{course_id});      
+  }
+  async deleteStudentCourse(user_id: number, course_id: number) {
+    return await this.client.delete(`/students/remove/${user_id}`,{
+      data:{
+        course_id
+      }
+    });      
+  }
+
+  //courses
+  async listCourses() {
+    return await this.client.get('/courses');      
+  }
 
 }
 

@@ -4,7 +4,7 @@ import styles from "../styles/components/button.module.css";
 interface Props {
   children: ReactElement | string;
   type?: "button" | "submit" | "reset";
-  onClick?: () => void;
+  onClick?: () => void | ((x: any) => void);
 }
 
 export const Button = ({ children, onClick, type = "button" }: Props) => {

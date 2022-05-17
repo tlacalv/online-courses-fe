@@ -7,9 +7,10 @@ interface Props {
   person: InstructorI | StudentI;
   onClick: () =>void;
   onDelete: ()=>void;
+  onCourse?: () =>void;
 }
 
-export const PersonItem = ({person, onClick, onDelete}:Props) => {
+export const PersonItem = ({person, onClick, onDelete, onCourse}:Props) => {
   return (
     <div className={styles.person}>
       <div className={styles.info} onClick={onClick}>
@@ -20,7 +21,7 @@ export const PersonItem = ({person, onClick, onDelete}:Props) => {
       <div className={styles.controls}>
         {
         person.courses && 
-        <button className={styles.courses}>Courses</button>
+        <button className={styles.courses} onClick={onCourse}>Courses</button>
         }
         <button className={styles.delete} onClick={onDelete}>Delete</button>
       </div>

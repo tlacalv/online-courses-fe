@@ -21,6 +21,7 @@ export const StudentList = () => {
             person={student}
             onClick={() => editStudent(student.id)}
             onDelete={() => deleteStudent(student.id)}
+            onCourse={()=>{navigate(`/students/courses/${student.id}`)}}
           />
         ))}
       </div>
