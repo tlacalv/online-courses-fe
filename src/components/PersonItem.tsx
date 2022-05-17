@@ -6,9 +6,10 @@ import styles from '../styles/components/personItem.module.css';
 interface Props {
   person: InstructorI | StudentI;
   onClick: () =>void;
+  onDelete: ()=>void;
 }
 
-export const PersonItem = ({person, onClick}:Props) => {
+export const PersonItem = ({person, onClick, onDelete}:Props) => {
   return (
     <div className={styles.person}>
       <div className={styles.info} onClick={onClick}>
@@ -21,7 +22,7 @@ export const PersonItem = ({person, onClick}:Props) => {
         person.courses && 
         <button className={styles.courses}>Courses</button>
         }
-        <button className={styles.delete}>Delete</button>
+        <button className={styles.delete} onClick={onDelete}>Delete</button>
       </div>
     </div>
   )
