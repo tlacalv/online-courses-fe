@@ -1,0 +1,21 @@
+.input{
+  display: flex;
+  flex-direction: column;
+  gap:.3rem;
+  margin: 1rem 0;
+}
+.textInput {
+  border: 2px solid #363a45;
+  padding: .8rem .3rem;
+  padding-left: 1rem;
+  border-radius: 4px;
+  background-color: #111;
+  color: white;
+}
+.label {
+
+}
+.error {
+  color: rgb(243, 86, 86);
+  font-weight: bold;
+}

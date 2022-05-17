@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { client } from '../../api/coursesAPI';
 import ButtonAdd from '../../components/ButtonAdd';
 import { EmptyList } from '../../components/EmptyList';
@@ -9,6 +10,7 @@ import { InstructorI } from '../../interfaces';
 
 
 export const InstructorList = () => {
+  const navigate = useNavigate();
   const [instructors, setInstructors] = useState<InstructorI[]>([]);
   
   useEffect(() => {
@@ -17,6 +19,10 @@ export const InstructorList = () => {
         setInstructors(response.data);
       }))
   }, [])
+
+  const editInstructor = (id: number) => {
+    navigate(`/instructors/${id}`)
+  }
   
   return (
     <>
@@ -27,13 +33,13 @@ export const InstructorList = () => {
       }
       <div className='list'>
         {
-          instructors.map(instructor => <PersonItem person={instructor}/>)
+          instructors.map(instructor => <PersonItem key={instructor.id} person={instructor} onClick={()=>editInstructor(instructor.id)}/>)
 
         }
       </div>
       
 
-      <ButtonAdd onClick={()=>{}}/>
+      <ButtonAdd onClick={()=>navigate('/instructors/new')}/>
     </>
   )
 }

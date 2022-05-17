@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { BrowserRouter, Navigate, Route, Routes, NavLink, useLocation} from 'react-router-dom';
 import { DefaultLayout } from '../layouts/DefaultLayout';
-import { CourseList, Home, InstructorList, StudentList } from '../pages';
+import { CourseList, Home, Instructor, InstructorList, NewInstructor, StudentList } from '../pages';
 
 export const Navigation = () => {
   
@@ -14,6 +14,8 @@ export const Navigation = () => {
         <Route path='/' element={<DefaultLayout><Home /></DefaultLayout>}  />
 
           <Route path='/instructors' element={<DefaultLayout><InstructorList /></DefaultLayout>}  />
+          <Route path='/instructors/new' element={<DefaultLayout><NewInstructor /></DefaultLayout>}  />
+          <Route path='/instructors/:id' element={<DefaultLayout><Instructor /></DefaultLayout>}  />
 
           <Route path='/students' element={<DefaultLayout><StudentList /></DefaultLayout>}  />
 

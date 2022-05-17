@@ -5,12 +5,13 @@ import styles from '../styles/components/personItem.module.css';
 
 interface Props {
   person: InstructorI | StudentI;
+  onClick: () =>void;
 }
 
-export const PersonItem = ({person}:Props) => {
+export const PersonItem = ({person, onClick}:Props) => {
   return (
     <div className={styles.person}>
-      <div className={styles.info}>
+      <div className={styles.info} onClick={onClick}>
         <span className={styles.name}>{person.name}</span>
         <span className={styles.age}>Age: {person.age}</span>
       </div>

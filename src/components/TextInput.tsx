@@ -1,7 +1,8 @@
 import { ErrorMessage, useField } from "formik"
+import styles from '../styles/components/textinput.module.css'
 
 interface Props {
-  label: string;
+  label?: string;
   name: string;
   type?: string;
   placeholder?: string;
@@ -12,12 +13,12 @@ export const TextInput = ({label, ...props}: Props) => {
   const [ field ] = useField(props)
   
   return (
-    <>
-      <label htmlFor={props.id || props.name}>{label}</label>
-      <input className="text-input" {...field} {...props} />
+    <div className={styles.input}>
+      {label && <label className={styles.label} htmlFor={props.id || props.name}>{label}</label>}
+      <input className={styles.textInput} {...field} {...props} />
       {/* @ts-ignore */}
-      <ErrorMessage name={props.name} component="span" />
+      <ErrorMessage name={props.name} component="span"  className={styles.error}/>
       
-    </>
+    </div>
   )
 }
