@@ -1,0 +1,59 @@
+.person {
+  background-color: #363a45;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1rem 2rem;
+}
+.info {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  flex-grow: 1;
+  cursor: pointer;
+}
+.name{
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.age{
+  color: rgb(155, 155, 155);
+}
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  min-height: 55px;
+  justify-content: center;
+}
+.delete, .courses {
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: none;
+  color:white;
+  display: flex;
+  padding: .1rem .7rem;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  transition: all .3s ease-out;
+}
+
+.delete:hover {
+  background-color: rgb(250, 70, 70);
+  
+
+} 
+.courses:hover {
+  background-color: #4f5564;
+
+}
+.delete {
+  background-color: rgb(243, 86, 86);
+}
+.courses{
+  
+
+}

@@ -1,0 +1,13 @@
+.emptyList{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+.emptyList p {
+  font-size: 1.2rem;
+}
+.emptyList span {
+  font-size: 3rem;
+  color: #eeebd3;
+}

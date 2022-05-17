@@ -22,7 +22,7 @@ export const DefaultLayout = ({ children }: Props) => {
   return (
     <>
       <nav className={`${styles.menu} ${isOpen ? styles.open : ""}`}>
-        <h2>Online Courses</h2>
+        <h2 className="site-title">Online Courses</h2>
         <ul>
           <li>
             <NavLink
@@ -67,7 +67,7 @@ export const DefaultLayout = ({ children }: Props) => {
         <button onClick={() => setIsOpen(!isOpen)}>
           <FontAwesomeIcon icon={faBars} />
         </button>
-        <h2>Online courses</h2>
+        <h2 className="site-title">Online courses</h2>
       </header>
       <div className="content">
         {children}

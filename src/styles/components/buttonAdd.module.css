@@ -1,0 +1,45 @@
+.btn{
+  outline: none;
+  transition-duration: .3s;
+  border: none;
+  height: 70px;
+  width: 70px;
+  font-size: 20px;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: #6f58c9;
+  box-shadow: 1px 1px 4px rgba(0,0,0,.25);
+  border-radius: 100px;
+  color: white;
+  font-size: 40px;
+  border: 3px solid white;
+  
+}
+.btn:focus{
+  outline: none;
+}
+.btn:after{
+  content: '';
+height: 70px;
+width: 70px;
+background: white ;
+transition: .3s;
+opacity: 0;
+position: absolute;
+}
+.btn:hover::after{
+opacity: .2;
+
+}
+
+.btn:focus::-moz-focus-inner {
+  border: none;
+}
+.disabled {
+  cursor: progress;
+}
