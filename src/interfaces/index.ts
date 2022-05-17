@@ -6,7 +6,7 @@ export interface InstructorI  {
 export interface StudentI  {
   age: number;
   name: string;
-  courses: CourseI[];
+  courses?: CourseI[];
   [key:string]: any
 }
 

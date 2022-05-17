@@ -1,5 +1,5 @@
 import axios from "axios";
-import { InstructorI } from "../interfaces";
+import { InstructorI, StudentI } from "../interfaces";
 
 class CoursesAPI {
   private client;
@@ -17,7 +17,7 @@ class CoursesAPI {
     }
     return this.instance
   }
-
+  //instructors
   async listInstructors() {
     return await this.client.get('/instructors');      
   }
@@ -33,6 +33,23 @@ class CoursesAPI {
   async deleteInstructor(id: number) {
     return await this.client.delete(`/instructors/${id}`);      
   }
+  //students
+  async listStudents() {
+    return await this.client.get('/students');      
+  }
+  async getStudent(id:number) {
+    return await this.client.get(`/students/${id}`);      
+  }
+  async createStudent(student: StudentI) {
+    return await this.client.post(`/students/`,student);      
+  }
+  async updateStudent(id:number, student: StudentI) {
+    return await this.client.put(`/students/${id}`,student);      
+  }
+  async deleteStudent(id: number) {
+    return await this.client.delete(`/students/${id}`);      
+  }
+
 }
 
 export const client = CoursesAPI.getInstance();
