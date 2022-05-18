@@ -1,8 +1,7 @@
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { BrowserRouter, Navigate, Route, Routes, NavLink, useLocation} from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes} from 'react-router-dom';
 import { DefaultLayout } from '../layouts/DefaultLayout';
-import { Course, CourseList, Home, Instructor, InstructorList, NewCourse, NewInstructor, NewStudent, Student, StudentList } from '../pages';
+import { Course, CourseList, Instructor, InstructorList, NewCourse, NewInstructor, NewStudent, Student, StudentList } from '../pages';
+import { Chronogram } from '../pages/courses/Chronogram';
 import { StudentCourses } from '../pages/students/StudentCourses';
 
 export const Navigation = () => {
@@ -12,8 +11,6 @@ export const Navigation = () => {
       <div className={`App`}>
         
         <Routes>
-        <Route path='/' element={<DefaultLayout><Home /></DefaultLayout>}  />
-
           <Route path='/instructors' element={<DefaultLayout><InstructorList /></DefaultLayout>}  />
           <Route path='/instructors/new' element={<DefaultLayout><NewInstructor /></DefaultLayout>}  />
           <Route path='/instructors/:id' element={<DefaultLayout><Instructor /></DefaultLayout>}  />
@@ -27,8 +24,10 @@ export const Navigation = () => {
           <Route path='/courses/new' element={<DefaultLayout><NewCourse /></DefaultLayout>}  />
           <Route path='/courses/:id' element={<DefaultLayout><Course /></DefaultLayout>}  />
 
+          <Route path='/chronogram' element={<DefaultLayout><Chronogram /></DefaultLayout>}  />
+
           
-          <Route path='/*' element={<Navigate to="/" replace />}  />
+          <Route path='/*' element={<Navigate to="/courses" replace />}  />
         </Routes>
       </div>
     

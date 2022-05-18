@@ -76,6 +76,11 @@ class CoursesAPI {
   async deleteCourse(id: number) {
     return await this.client.delete(`/courses/${id}`);      
   }
+  async selectChronogram(date: string) {
+    return await this.client.post(`/courses/chronogram`,{
+      date
+    });      
+  }
 
 }
 

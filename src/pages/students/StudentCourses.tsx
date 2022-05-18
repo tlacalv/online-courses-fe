@@ -1,13 +1,12 @@
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useStudent } from "../../hooks/useStudent";
-import { Error } from "../../components/Error";
 import { StudentCourse } from "../../components/StudentCourse";
 import { SelectCourse } from "../../components/SelectCourse";
 import { useState } from "react";
 import { Button } from "../../components/Button";
+import { ErrorPopUp } from "../../components/ErrorPopUp";
 
 export const StudentCourses = () => {
   const navigate = useNavigate();
@@ -25,7 +24,7 @@ export const StudentCourses = () => {
       <hr></hr>
       <Button onClick={()=>setSelect(!select)}>Select course</Button>
       <SelectCourse select={select} onSelect={selectCourse} setSelect={setSelect}/>
-      {error && <Error {...error} />}
+      {error && <ErrorPopUp {...error} />}
       <div className="list">
         {found &&
           courses.map((course) => (

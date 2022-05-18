@@ -1,5 +1,5 @@
 
-import { CourseI, InstructorI, StudentI } from '../interfaces'
+import { CourseI } from '../interfaces'
 import styles from '../styles/components/courseitem.module.css';
 
 
