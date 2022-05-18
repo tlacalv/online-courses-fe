@@ -13,9 +13,10 @@ export interface StudentI  {
 export interface CourseI  {
   name: string;
   date: string;
+  time: string;
   duration: number;
-  instructor: InstructorI;
-  students: StudentI[]
+  instructor?: InstructorI;
+  students?: StudentI[]
 
   [key:string]: any
 }

@@ -1,15 +1,4 @@
-.courseSelect {
-  background-color: rgb(26, 26, 26);
-  padding: 1.5rem;
-  max-height: 800px;
-  overflow-y: auto;
-  border-radius: 5px;
-  border: 1px solid #363a45;
 
-}
-.courseSelect .course {
-  cursor: pointer;
-}
 .course {
   background-color: #363a45;
   border-radius: 4px;
@@ -24,6 +13,7 @@
   gap: .5rem;
   align-items: center;
   flex-grow: 1;
+  cursor: pointer;
 }
 .name{
   font-size: 1.5rem;
